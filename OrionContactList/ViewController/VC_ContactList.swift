@@ -28,7 +28,9 @@ class VC_ContactList: VC_Base {
     }
     
     @objc func getContactList() {
-        
+        if (refreshControl.isRefreshing) {
+            refreshControl.endRefreshing()
+        }
     }
     
     // MARK: - Navigation

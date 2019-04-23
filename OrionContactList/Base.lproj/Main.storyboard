@@ -104,7 +104,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KuX-t4-6cy">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KuX-t4-6cy">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JP3-lt-4h3">
@@ -187,7 +187,7 @@
                                                     <constraint firstItem="209-XX-RM6" firstAttribute="leading" secondItem="mbq-x0-brf" secondAttribute="leading" constant="15" id="seh-bP-w8m"/>
                                                 </constraints>
                                             </view>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="BmM-Sw-cfo">
+                                            <textField opaque="NO" tag="700" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="BmM-Sw-cfo">
                                                 <rect key="frame" x="112.66666666666667" y="214.33333333333331" width="247.33333333333331" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -196,7 +196,7 @@
                                                     <outlet property="delegate" destination="hWJ-gX-PuZ" id="OAI-l0-HQi"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Cir-pL-V7p">
+                                            <textField opaque="NO" tag="701" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Cir-pL-V7p">
                                                 <rect key="frame" x="112.66666666666667" y="261" width="247.33333333333331" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -205,7 +205,7 @@
                                                     <outlet property="delegate" destination="hWJ-gX-PuZ" id="eep-XD-yCE"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="YvT-YP-ajY">
+                                            <textField opaque="NO" tag="702" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="YvT-YP-ajY">
                                                 <rect key="frame" x="112.66666666666667" y="344" width="247.33333333333331" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -214,7 +214,7 @@
                                                     <outlet property="delegate" destination="hWJ-gX-PuZ" id="Qg6-dK-IuZ"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="kfu-XZ-It3">
+                                            <textField opaque="NO" tag="703" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="kfu-XZ-It3">
                                                 <rect key="frame" x="112.66666666666667" y="390.33333333333331" width="247.33333333333331" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -326,6 +326,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ivProfile" destination="Xxq-aa-i02" id="T6R-Ps-aOd"/>
+                        <outlet property="svDetail" destination="KuX-t4-6cy" id="bWa-pu-Fnt"/>
                         <outlet property="tfEmail" destination="YvT-YP-ajY" id="LIo-aH-krn"/>
                         <outlet property="tfFirstName" destination="BmM-Sw-cfo" id="tLS-bP-TuT"/>
                         <outlet property="tfLastName" destination="Cir-pL-V7p" id="cvb-sH-uoQ"/>
