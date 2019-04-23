@@ -23,4 +23,6 @@ extension UIColor {
         
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
+    
+    static let themeColor = UIColor(hexString: "ff8c00")
 }

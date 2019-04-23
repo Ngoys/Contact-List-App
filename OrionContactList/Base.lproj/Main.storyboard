@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mYN-nf-qmF">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mYN-nf-qmF">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -26,24 +26,24 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="znx-Jy-eam" id="nVb-M4-hew">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="113.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" tag="101" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PKA-vh-RSN">
-                                                    <rect key="frame" x="15" y="20" width="74" height="74"/>
+                                                    <rect key="frame" x="15" y="20" width="73.666666666666671" height="73.666666666666671"/>
                                                     <color key="backgroundColor" red="1" green="0.54901960780000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="PKA-vh-RSN" secondAttribute="height" multiplier="1:1" id="FBJ-HI-ViM"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmj-hR-Xgx">
-                                                    <rect key="frame" x="97" y="20" width="263" height="74"/>
+                                                    <rect key="frame" x="103.66666666666666" y="20" width="256.33333333333337" height="73.666666666666671"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bOZ-Rc-qJH">
-                                                    <rect key="frame" x="15" y="113.66666666666667" width="360" height="0.3333333333333286"/>
+                                                    <rect key="frame" x="15" y="113.33333333333333" width="360" height="0.3333333333333286"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="0.5" id="0cj-xA-6f2"/>
@@ -56,7 +56,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="bOZ-Rc-qJH" secondAttribute="bottom" id="ATS-F1-7Cx"/>
                                                 <constraint firstItem="bOZ-Rc-qJH" firstAttribute="leading" secondItem="PKA-vh-RSN" secondAttribute="leading" id="DFW-no-6nl"/>
                                                 <constraint firstItem="Bmj-hR-Xgx" firstAttribute="top" secondItem="nVb-M4-hew" secondAttribute="top" constant="20" id="LIU-Y6-9FX"/>
-                                                <constraint firstItem="Bmj-hR-Xgx" firstAttribute="leading" secondItem="PKA-vh-RSN" secondAttribute="trailing" constant="8" id="LKN-Xh-ydV"/>
+                                                <constraint firstItem="Bmj-hR-Xgx" firstAttribute="leading" secondItem="PKA-vh-RSN" secondAttribute="trailing" constant="15" id="LKN-Xh-ydV"/>
                                                 <constraint firstAttribute="trailing" secondItem="bOZ-Rc-qJH" secondAttribute="trailing" id="fet-iC-Huh"/>
                                                 <constraint firstAttribute="trailing" secondItem="Bmj-hR-Xgx" secondAttribute="trailing" constant="15" id="o75-2R-cUt"/>
                                                 <constraint firstAttribute="bottom" secondItem="Bmj-hR-Xgx" secondAttribute="bottom" constant="20" id="okH-nI-cYp"/>

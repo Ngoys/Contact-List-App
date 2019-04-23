@@ -17,6 +17,7 @@ class VC_ContactDetail: VC_Base {
     @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPhone: UITextField!
     
+    var c : Contact!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,13 @@ class VC_ContactDetail: VC_Base {
         
         registerForKeyboardWillShowNotification(self.svDetail)
         registerForKeyboardWillHideNotification(self.svDetail)
+        
+        if (c != nil) {
+            self.tfFirstName.text = c.firstName
+            self.tfLastName.text = c.lastName
+            self.tfEmail.text = c.email
+            self.tfPhone.text = c.phone
+        }
         
     }
     
@@ -37,8 +45,18 @@ class VC_ContactDetail: VC_Base {
             return
         }
         
+        showActivityIndicatory(uiView: self.view)
+        
+        c.firstName = tfFirstName.text
+        c.lastName = tfLastName.text
+        c.email = tfEmail.text
+        c.phone = tfPhone.text
         
         
+        ContactJSONFileManager.SHARED.writeJSON(contacts: [c])
+        
+        
+        hideActivityIndicatory()
         self.navigationController?.popViewController(animated: true)
     }
     

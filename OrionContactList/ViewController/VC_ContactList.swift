@@ -14,7 +14,7 @@ class VC_ContactList: VC_Base {
     @IBOutlet weak var search: UIBarButtonItem!
     @IBOutlet weak var tvContact: UITableView!
     
-    
+    var contacts : [Contact] = []
     var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
@@ -25,6 +25,10 @@ class VC_ContactList: VC_Base {
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(getContactList), for: .valueChanged)
         tvContact.addSubview(refreshControl)
+        
+        contacts = ContactJSONFileManager.SHARED.readJSON()
+        
+        tvContact.reloadData()
     }
     
     @objc func getContactList() {
@@ -37,6 +41,7 @@ class VC_ContactList: VC_Base {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Segue-Contact-Detail" {
             let viewController : VC_ContactDetail = segue.destination as! VC_ContactDetail
+            viewController.c = sender as? Contact
         }
     }
 }
@@ -46,12 +51,8 @@ extension VC_ContactList: UITableViewDelegate,UITableViewDataSource {
         
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return contacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,14 +65,19 @@ extension VC_ContactList: UITableViewDelegate,UITableViewDataSource {
         let lbTitle = cell.viewWithTag(102) as! UILabel
         
         lbPicture.layer.cornerRadius = lbPicture.frame.size.height / 2
-        lbTitle.text = "asdasd"
+        lbPicture.backgroundColor = .themeColor
         
+        let c = contacts[row]
+        lbTitle.text = c.firstName! + " " + c.lastName!
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "Segue-Contact-Detail", sender: nil)
+        let section = indexPath.section
+        let row = indexPath.row
+        
+        self.performSegue(withIdentifier: "Segue-Contact-Detail", sender: contacts[row])
     }
 }
 

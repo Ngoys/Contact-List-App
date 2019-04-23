@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Constants {
+struct Constant {
     
-    struct TextFile {
+    struct JSONFile {
         static let name = "data"
         static let type = "json"
         
