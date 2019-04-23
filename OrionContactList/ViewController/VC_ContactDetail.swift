@@ -37,6 +37,10 @@ class VC_ContactDetail: VC_Base {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tfFirstName.becomeFirstResponder()
+    }
+    
     @IBAction func save(_ sender: Any) {
         guard let fName = tfFirstName.text, !fName.isEmpty else {
             return
@@ -55,6 +59,8 @@ class VC_ContactDetail: VC_Base {
         
         ContactJSONFileManager.SHARED.writeJSON(contacts: [c])
         
+        NotificationCenter.default.post(name: Notification.Name(NotificationName.didSuccessUpdateContactDetails), object: nil)
+
         
         hideActivityIndicatory()
         self.navigationController?.popViewController(animated: true)

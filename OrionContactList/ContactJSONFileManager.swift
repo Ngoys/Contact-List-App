@@ -37,16 +37,12 @@ struct ContactJSONFileManager {
         var contacts = [Contact]()
         
         do {
-            let data = try Data(contentsOf: storedURL, options: .mappedIfSafe)
+            
+            let data = try Data(contentsOf: URL(fileURLWithPath: localPath), options: .mappedIfSafe)
             contacts = try JSONDecoder().decode([Contact].self, from: data)
             
-            if (contacts.count == 0) {
-                
-                let data = try Data(contentsOf: URL(fileURLWithPath: localPath), options: .mappedIfSafe)
-                contacts = try JSONDecoder().decode([Contact].self, from: data)
-                
-                writeJSON(contacts: contacts)
-            }
+            writeJSON(contacts: contacts)
+            
             
         } catch let error as NSError {
             print("Failed reading from URL: \(storedURL), Error: " + error.localizedDescription)

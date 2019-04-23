@@ -26,15 +26,28 @@ class VC_ContactList: VC_Base {
         refreshControl.addTarget(self, action: #selector(getContactList), for: .valueChanged)
         tvContact.addSubview(refreshControl)
         
-        contacts = ContactJSONFileManager.SHARED.readJSON()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refreshContactList(notification:)), name: Notification.Name("NotificationIdentifier"), object: nil)
         
-        tvContact.reloadData()
+        getContactList()
     }
     
     @objc func getContactList() {
+        
+        contacts = ContactJSONFileManager.SHARED.readJSON()
+        tvContact.reloadData()
+        
         if (refreshControl.isRefreshing) {
             refreshControl.endRefreshing()
         }
+    }
+    
+    @objc func refreshContactList(notification: Notification) {
+        
+        getContactList()
+    }
+    
+    @IBAction func add(_ sender: Any) {
+        self.performSegue(withIdentifier: "Segue-Contact-Detail", sender: nil)
     }
     
     // MARK: - Navigation
@@ -65,7 +78,6 @@ extension VC_ContactList: UITableViewDelegate,UITableViewDataSource {
         let lbTitle = cell.viewWithTag(102) as! UILabel
         
         lbPicture.layer.cornerRadius = lbPicture.frame.size.height / 2
-        lbPicture.backgroundColor = .themeColor
         
         let c = contacts[row]
         lbTitle.text = c.firstName! + " " + c.lastName!

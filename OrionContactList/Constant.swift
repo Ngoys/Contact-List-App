@@ -26,6 +26,10 @@ struct Constant {
     }
 }
 
+struct NotificationName {
+    static let didSuccessUpdateContactDetails = "didSuccessUpdateContactDetails"
+}
+
 struct Status {
     static let success = "OK"
     static let error = "error"
